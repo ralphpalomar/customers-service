@@ -1,0 +1,43 @@
+#%RAML 1.0
+title: Customers Service API
+
+description: |
+  Allows the following:
+    - List customers
+    - Create a new customer
+    - Update a customer
+    - Delete a customer
+    
+version: v1
+baseUri: http://0.0.0.0:8081
+mediaType: application/json
+
+resourceTypes: 
+  resource-item: !include resourceTypes/resource-item.raml
+  resource-collection: !include resourceTypes/resource-collection.raml
+
+types: 
+  customers: !include dataTypes/customers.raml
+  customers-response: !include dataTypes/customers-response.raml
+    
+traits: 
+  customers-searchable: !include traits/customers-queryParams.raml
+  client-authenticated: !include traits/client-auth.raml
+
+/customers:
+  is: [customers-searchable, client-authenticated]
+  type: { resource-collection: {
+      getExample: !include examples/customers-list-example.json,
+      postRequestExample: !include examples/customers-example.json,
+      postResponseExample: !include examples/response-example.json
+    }
+  }
+  
+  /{id}:
+    is: [client-authenticated]
+    type: { resource-item: {
+        getExample: !include examples/customers-example.json,
+        putRequestExample: !include examples/customers-example.json,
+        putResponseExample: !include examples/response-example.json
+      }
+    }

@@ -1,0 +1,24 @@
+#%RAML 1.0 ResourceType
+
+get:
+  description: Get a list of <<resourcePathName>>.
+  responses:
+    200:
+      body:
+        application/json:
+          type: <<resourcePathName>>[]
+          example: <<getExample>>
+          
+post:
+  description: Create a new <<resourcePathName>>.
+  body:
+    application/json:
+      type: <<resourcePathName>>
+      example: <<postRequestExample>>
+  responses:
+    201:
+      body:
+        application/json:
+          type: <<resourcePathName>>-response
+          example: <<postResponseExample>>
+  

@@ -1,0 +1,32 @@
+#%RAML 1.0 ResourceType
+
+get:
+  description: Get <<resourcePathName>> based on the specified id.
+  responses:
+    200:
+      body:
+        application/json:
+          type: <<resourcePathName>>
+          example: <<getExample>>
+          
+put:
+  description: Update a <<resourcePathName>> based on the specified id.
+  body:
+    application/json:
+      type: <<resourcePathName>>
+      example: <<putRequestExample>>
+  responses:
+    200:
+      body:
+        application/json:
+          type: <<resourcePathName>>-response
+          example: <<putResponseExample>>
+      
+delete:
+  description: Delete a <<resourcePathName>> based on the specified id.
+  responses:
+    204:
+      description: Successful deletion
+    404:
+      description: Id not found
+  
