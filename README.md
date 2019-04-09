@@ -8,7 +8,7 @@ This is RESTful API that allows you to do the following:
 * Delete a customer record based on the specified id.
 
 ## Base URL and API Console
-* Base path is http://0.0.0.0:8081/api
+* Base URL is http://0.0.0.0:8081/api
 * API console can be accessed at http://0.0.0.0:8081/console
   * The API console provides detailed description of API resources, data types, sample requests and response. It can also be used to trigger and test the API.
 
