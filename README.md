@@ -15,3 +15,4 @@ This is RESTful API that allows you to do the following:
 ## Deployment Guide
 * Mule EE Runtime Version: 4.1.5
 * Build the JAR package using *mvn clean package*
+* In the target/ directory, copy the JAR file to the MULE_HOME/apps directory, or upload the JAR file to the Mule service using Anypoint Runtime Manager.
