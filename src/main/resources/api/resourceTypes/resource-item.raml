@@ -9,7 +9,7 @@ get:
           type: <<resourcePathName>>
           example: <<getExample>>
           
-put:
+put?:
   description: Update a <<resourcePathName>> based on the specified id.
   body:
     application/json:
@@ -22,7 +22,7 @@ put:
           type: <<resourcePathName>>-response
           example: <<putResponseExample>>
       
-delete:
+delete?:
   description: Delete a <<resourcePathName>> based on the specified id.
   responses:
     204:
